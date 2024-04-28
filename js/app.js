@@ -120,6 +120,19 @@ function load() {
   start();
 }
 
+function sendEmail() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+  var subject = name; // You can use the name as the subject
+  
+  var mailtoLink = "mailto:minhajulislama@gmail.com" +
+                   "?subject=" + encodeURIComponent(subject) +
+                   "&body=" + encodeURIComponent(message + "\n\nFrom: " + email);
+  
+  window.location.href = mailtoLink;
+}
+
 function start() {
   totalWidth = 0;
   for (let i = 0; i < slider.length; i++) {
